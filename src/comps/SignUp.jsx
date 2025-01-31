@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 
-export default function SignIn() {
+export default function SignUp() {
   return (
     <div className="flex items-center justify-center bg-[#081808] h-[100vh] w-full">
       <div className="text-white w-full max-w-md p-4 bg-black rounded-3xl shadow-lg">
         <h2 className="text-2xl font-semibold text-center mb-6 text-neon-green">
-          Sign In
+          Sign Up
         </h2>
-        <form name="signIn" className="space-y-4">
+        <form name="signUp" className="space-y-4">
           <div>
             <label
               htmlFor="email"
@@ -36,17 +36,29 @@ export default function SignIn() {
               className="mt-1 block w-full px-3 py-2 border border-neon-green rounded-md shadow-sm bg-gray-800 text-neon-green focus:outline-none focus:ring-neon-green focus:border-neon-green"
             />
           </div>
-          <Link to="/signup" className="text-[12px] text-blue-400">
-            Signup?
-          </Link>
-          <Link to="/home" className="text-[12px] text-blue-400">
-            <button
-              type="submit"
-              className="w-full px-4 py-2 bg-neon-green rounded-md hover:bg-green-950 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+          <div>
+            <label
+              htmlFor="confirm-password"
+              className="block text-sm font-medium text-neon-green"
             >
-              Sign In
-            </button>
+              Confirm Password
+            </label>
+            <input
+              id="confirm-password"
+              type="password"
+              required
+              className="mt-1 block w-full px-3 py-2 border border-neon-green rounded-md shadow-sm bg-gray-800 text-neon-green focus:outline-none focus:ring-neon-green focus:border-neon-green"
+            />
+          </div>
+          <Link to="/" className="text-[12px] text-blue-400">
+            Already have an account? Sign In
           </Link>
+          <button
+            type="submit"
+            className="w-full px-4 py-2 bg-neon-green rounded-md hover:bg-green-950 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+          >
+            Sign Up
+          </button>
         </form>
       </div>
     </div>
