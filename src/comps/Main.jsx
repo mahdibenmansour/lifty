@@ -1,8 +1,5 @@
 import Greeting from "./Greeting.jsx";
 import IntakeComp from "./IntakeComp.jsx";
-import Calendar from "./Calendar.jsx";
-import Calendar2 from "./Calendar2.jsx";
-import SchedulerView from "./Scheduler/Scheduler.jsx";
 
 export default function Main() {
   return (
@@ -27,9 +24,7 @@ export default function Main() {
             </IntakeComp>
           </div>
         </div>
-        <div name="calendar" className="flex bg-gray-500">
-          <SchedulerView />
-        </div>
+        <div name="calendar" className="flex bg-gray-500"></div>
       </div>
     </div>
   );
