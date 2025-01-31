@@ -53,12 +53,14 @@ export default function SignUp() {
           <Link to="/" className="text-[12px] text-blue-400">
             Already have an account? Sign In
           </Link>
-          <button
-            type="submit"
-            className="w-full px-4 py-2 bg-neon-green rounded-md hover:bg-green-950 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
-          >
-            Sign Up
-          </button>
+          <Link to="/">
+            <button
+              type="submit"
+              className="w-full px-4 py-2 bg-neon-green rounded-md hover:bg-green-950 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+            >
+              Sign Up
+            </button>
+          </Link>
         </form>
       </div>
     </div>
