@@ -1,11 +1,12 @@
 import Greeting from "./Greeting.jsx";
 import IntakeComp from "./IntakeComp.jsx";
+import WorkDay from "../WorkDay.jsx";
 
 export default function Main() {
   return (
-    <div className="flex flex-col ml-8 mt-8 h-full ">
+    <div className="flex flex-col pl-8 pt-8 h-full w-full">
       <Greeting />
-      <div className="flex mt-8 gap-8">
+      <div className="flex pt-8 gap-8 w-full">
         <div className="flex flex-col gap-8">
           <div className="flex gap-8">
             <IntakeComp title={"Active Steps"} value={5906}>
@@ -24,7 +25,9 @@ export default function Main() {
             </IntakeComp>
           </div>
         </div>
-        <div name="calendar" className="flex bg-gray-500"></div>
+        <div name="workout" className="flex w-full pr-4">
+          <WorkDay />
+        </div>
       </div>
     </div>
   );
