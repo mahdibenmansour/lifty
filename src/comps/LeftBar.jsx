@@ -1,5 +1,6 @@
 import { HiOutlineDocumentText } from "react-icons/hi2";
 import { IoCalendarOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
 import { PiHouseSimple } from "react-icons/pi";
 import { CiDumbbell } from "react-icons/ci";
 export default function LeftBar() {
@@ -23,14 +24,18 @@ export default function LeftBar() {
       <div>
         <p className="pt-11 pl-3">MENU</p>
         <ul className="flex flex-col gap-2 text-xl my-4">
-          <li className="flex gap-2 items-center hover:shadow-xl rounded-3xl cursor-pointer hover:bg-[#2AAE74] p-4 mr-8">
-            <PiHouseSimple />
-            Dashboard
-          </li>
-          <li className="flex gap-2 items-center hover:shadow-xl rounded-3xl cursor-pointer hover:bg-[#2AAE74] p-4 mr-8">
-            <CiDumbbell size={29} />
-            Workout
-          </li>
+          <Link to="/home">
+            <li className="flex gap-2 items-center hover:shadow-xl rounded-3xl cursor-pointer hover:bg-[#2AAE74] p-4 mr-8">
+              <PiHouseSimple />
+              Dashboard
+            </li>
+          </Link>
+          <Link to="/workout">
+            <li className="flex gap-2 items-center hover:shadow-xl rounded-3xl cursor-pointer hover:bg-[#2AAE74] p-4 mr-8">
+              <CiDumbbell size={29} />
+              Workout
+            </li>
+          </Link>
           <li className="flex gap-2 items-center hover:shadow-xl rounded-3xl cursor-pointer hover:bg-[#2AAE74] p-4 mr-8">
             <IoCalendarOutline />
             Schedule

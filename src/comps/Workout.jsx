@@ -2,8 +2,9 @@ import React from "react";
 import Header from "./Header";
 import Footer from "./Footer.jsx";
 import LeftBar from "./LeftBar.jsx";
+import WorkoutEx from "./WorkoutEx.jsx";
 
-export default function Workout() {
+export default function Workout(s) {
   return (
     <div className="flex flex-col min-h-[100vh]">
       <Header />
@@ -11,7 +12,7 @@ export default function Workout() {
         <div className="min-w-[20%] pl-2 min-h-[100%]">
           <LeftBar />
         </div>
-        <div className="min-w-[80%] pl-2 min-h-[100%]"></div>
+        <WorkoutEx />
       </div>
       <Footer />
     </div>

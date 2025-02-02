@@ -1,6 +1,7 @@
 import Greeting from "./Greeting.jsx";
 import IntakeComp from "./IntakeComp.jsx";
 import WorkDay from "../WorkDay.jsx";
+import { useState, useContext, createContext } from "react";
 
 export default function Main() {
   return (
