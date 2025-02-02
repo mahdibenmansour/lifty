@@ -18,7 +18,7 @@ export default function WorkDay() {
   useEffect(() => {
     const today = new Date().toLocaleDateString("en-US", { weekday: "long" });
     const todayWorkout = workoutSplits.find((split) => split.day === today);
-    setWorkout(todayWorkout ? todayWorkout.workout : "No Workout Assigned");
+    setWorkout(todayWorkout && todayWorkout.workout);
   }, []);
 
   return (
