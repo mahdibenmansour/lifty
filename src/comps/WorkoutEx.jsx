@@ -27,21 +27,17 @@ export default function WorkoutEx() {
   }
 
   useEffect(() => {
-    const fetchExercises = () => {
-      musclesGroup.map((muscle) => {
-        fetch(`https://api.api-ninjas.com/v1/exercises?muscle=${muscle}`, {
-          headers: {
-            "X-Api-Key": "4Sd7otTFNZCR70RfdE4Q0KkbFXVyVC5rdlWQmex7",
-          },
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            setExercises([...exercises, ...data]);
-          });
-      });
-    };
-
-    fetchExercises();
+    musclesGroup.map((muscle) => {
+      fetch(`https://api.api-ninjas.com/v1/exercises?muscle=${muscle}`, {
+        headers: {
+          "X-Api-Key": "4Sd7otTFNZCR70RfdE4Q0KkbFXVyVC5rdlWQmex7",
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          setExercises([...exercises, ...data]);
+        });
+    });
   }, [workout]);
 
   if (workout === "Rest Day") {
