@@ -2,7 +2,7 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'], // Adjust paths if needed
   theme: {
-    extend: {},
+    extend: { fontFamily: {title:["Bebas Neue", "serif"] } },
   },
   plugins: [],
 };

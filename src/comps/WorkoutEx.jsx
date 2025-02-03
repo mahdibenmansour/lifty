@@ -1,10 +1,15 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Context } from "../App";
 import Cell from "./Cell.jsx";
-
+import workoutSplitsData from "../assets/workoutSplits.json";
 export default function WorkoutEx() {
+  //
   const [exercises, setExercises] = useState([]);
   const [workout, setWorkout] = useContext(Context);
+  const today = "Sunday";
+  const todayWorkout = workoutSplitsData.find((split) => split.day === today);
+  setWorkout(todayWorkout && todayWorkout.workout);
+
   const musclesGroup = [];
   if (workout === "Chest Day") {
     musclesGroup.push("Chest");
@@ -43,8 +48,13 @@ export default function WorkoutEx() {
 
   if (workout === "Rest Day") {
     return (
-      <div className="min-w-[80%] pl-12 pt-4 min-h-[100%] flex justify-center items-center">
-        Today is rest day
+      <div className=" min-w-[80%] pl-12 pt-4 min-h-[100%] flex justify-center items-center">
+        <div className="flex flex-col items-center justify-center mr-[300px] mb-[150px]  relative">
+          <p className="font-semibold text-[200px] font-title ">REST.</p>
+          <p className="text-[40px] absolute bottom-8 font-semibold w-[500px] text-center">
+            (it's part of the program!)
+          </p>
+        </div>
       </div>
     );
   }

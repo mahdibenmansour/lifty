@@ -1,0 +1,9 @@
+[
+    { "day": "Monday", "workout": "Chest Day", "image": "./chest-muscle.svg" },
+    { "day": "Tuesday", "workout": "Back Day", "image": "./back.png" },
+    { "day": "Wednesday", "workout": "Leg day", "image": "./legs.svg" },
+    { "day": "Thursday", "workout": "Full arms Day", "image": "./biceps.svg" },
+    { "day": "Friday", "workout": "Shoulders", "image": "./shoulders.svg" },
+    { "day": "Saturday", "workout": "Leg Day", "image": "./legs.svg" },
+    { "day": "Sunday", "workout": "Rest Day", "image": "./rest.svg" }
+]
