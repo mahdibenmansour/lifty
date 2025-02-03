@@ -25,43 +25,46 @@ export default function WorkoutEx() {
     musclesGroup.push("neck");
     musclesGroup.push("traps");
   }
-  console.log(musclesGroup);
 
   useEffect(() => {
-    musclesGroup.map((muscle) => {
-      let link = `https://api.api-ninjas.com/v1/exercises?muscle=${muscle}`;
-      console.log(link);
-      fetch(link, {
-        headers: {
-          "X-Api-Key": "4Sd7otTFNZCR70RfdE4Q0KkbFXVyVC5rdlWQmex7",
-        },
-      })
-        .then((res) => res.json())
-        .then((data) =>
-          setExercises((prevExercises) => [...prevExercises, ...data])
-        );
-    });
-  }, []);
+    const fetchExercises = () => {
+      musclesGroup.map((muscle) => {
+        fetch(`https://api.api-ninjas.com/v1/exercises?muscle=${muscle}`, {
+          headers: {
+            "X-Api-Key": "4Sd7otTFNZCR70RfdE4Q0KkbFXVyVC5rdlWQmex7",
+          },
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            setExercises([...exercises, ...data]);
+          });
+      });
+    };
+
+    fetchExercises();
+  }, [workout]);
 
   if (workout === "Rest Day") {
     return (
-      <div className="min-w-[80%]  pl-12 pt-4 min-h-[100%] flex justify-center items-center">
+      <div className="min-w-[80%] pl-12 pt-4 min-h-[100%] flex justify-center items-center">
         Today is rest day
       </div>
     );
   }
-  if (!exercises) {
+  if (!exercises.length) {
     return (
-      <div className="min-w-[80%]  pl-12 pt-4 min-h-[100%] flex justify-center items-center">
+      <div className="min-w-[80%] pl-12 pt-4 min-h-[100%] flex justify-center items-center">
         Loading...
       </div>
     );
   }
   return (
-    <div className="min-w-[80%]  pl-12 pt-4 min-h-[100%] grid grid-cols-4 gap-x-8 gap-y-0">
-      {exercises.map((exercise, index) => (
-        <Cell key={index} exercise={exercise} />
-      ))}
+    <div className="min-w-[80%] pl-12 pt-4 min-h-[100%] ">
+      <div className="grid grid-cols-4 gap-8 pb-8">
+        {exercises.map((exercise) => (
+          <Cell key={exercise.id} exercise={exercise} />
+        ))}
+      </div>
     </div>
   );
 }
