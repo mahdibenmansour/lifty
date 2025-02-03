@@ -6,7 +6,7 @@ export default function WorkoutEx() {
   //
   const [exercises, setExercises] = useState([]);
   const [workout, setWorkout] = useContext(Context);
-  const today = "Sunday";
+  const today = new Date().toLocaleDateString("en-US", { weekday: "long" });
   const todayWorkout = workoutSplitsData.find((split) => split.day === today);
   setWorkout(todayWorkout && todayWorkout.workout);
 
