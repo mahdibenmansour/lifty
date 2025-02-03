@@ -35,6 +35,7 @@ export default function WorkoutEx() {
       })
         .then((response) => response.json())
         .then((data) => {
+          //   setExercises((prevExercises) => [...prevExercises, ...data]);
           setExercises([...exercises, ...data]);
         });
     });
